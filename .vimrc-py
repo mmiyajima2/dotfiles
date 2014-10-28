@@ -20,6 +20,9 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'scrooloose/syntastic'
+
+let g:syntastic_python_checkers = ['flake8']
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -27,6 +30,14 @@ NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 " MIYAJIMA add..
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'hynek/vim-python-pep8-indent'
+NeoBundleLazy 'lambdalisue/vim-pyenv', {
+        \ 'depends': ['davidhalter/jedi-vim'],
+        \ 'autoload': {
+        \   'filetypes': ['python', 'python3'],
+        \ }}
+
+
 
 let $PATH = "~/.pyenv/shims:".$PATH
 
@@ -38,18 +49,9 @@ NeoBundleLazy "lambdalisue/vim-django-support", {
       \   "filetypes": ["python", "python3", "djangohtml"]
       \ }}
 
-" pyenv 処理用に vim-pyenv を追加
-" Note: depends が指定されているため jedi-vim より後にロードされる（ことを期待）
-NeoBundleLazy "lambdalisue/vim-pyenv", {
-      \ "depends": ['davidhalter/jedi-vim'],
-      \ "autoload": {
-      \   "filetypes": ["python", "python3", "djangohtml"]
-      \ }}
 
 " ... neobundle.vim 終了処理等
 
-NeoBundle 'Flake8-vim'
-NeoBundle 'hynek/vim-python-pep8-indent'
 
 "保存時に自動でチェック
 let g:PyFlakeOnWrite = 1
