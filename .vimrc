@@ -1,5 +1,8 @@
 "NeoBundle Scripts-----------------------------
 set number
+set expandtab
+set tabstop=2
+
 if has('vim_starting')
   set nocompatible               " Be iMproved
 
