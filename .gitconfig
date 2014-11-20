@@ -1,0 +1,7 @@
+[core]
+  excludesfile = ~/.gitignore
+[http]
+	sslVerify = false
+[user]
+	email = mmiyajima2@gmail.com
+	name = MIYAJIMA,Masafumi
