@@ -31,6 +31,9 @@ let g:syntastic_python_checkers = ['flake8']
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'groenewege/vim-less'
+
 " MIYAJIMA add..
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'davidhalter/jedi-vim'
