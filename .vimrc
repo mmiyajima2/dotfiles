@@ -2,8 +2,9 @@
 syntax on
 set number
 set expandtab
-set tabstop=2
-
+set tabstop=8
+set shiftwidth=4
+set softtabstop=4
 
 
 " Note: Skip initialization for vim-tiny or vim-small.
@@ -34,6 +35,7 @@ set tabstop=2
  NeoBundle 'davidhalter/jedi-vim'
  NeoBundle 'scrooloose/syntastic'
 
+ " Require ``` pip install flake8  ```
  let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 
  call neobundle#end()
