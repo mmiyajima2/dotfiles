@@ -30,13 +30,15 @@ set softtabstop=4
  " Refer to |:NeoBundle-examples|.
  " Note: You don't set neobundle setting in .gvimrc!
  "
- " MIYAJIMA add..
  NeoBundle 'scrooloose/nerdtree'
  NeoBundle 'davidhalter/jedi-vim'
  NeoBundle 'scrooloose/syntastic'
+ NeoBundle 'nathanaelkane/vim-indent-guides'
 
  " Require ``` pip install flake8  ```
  let g:syntastic_python_checkers = ['flake8']
+ let g:indent_guides_enable_on_vim_startup = 1
+ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
  call neobundle#end()
 
