@@ -6,6 +6,9 @@ set tabstop=8
 set shiftwidth=4
 set softtabstop=4
 
+function! s:pypset()
+    py3(sys.path.insert(0, '.'))
+endfunction
 
 " Note: Skip initialization for vim-tiny or vim-small.
  if 0 | endif
@@ -33,19 +36,20 @@ set softtabstop=4
  NeoBundle 'scrooloose/nerdtree'
  NeoBundle 'davidhalter/jedi-vim'
  NeoBundle 'scrooloose/syntastic'
- NeoBundle 'nathanaelkane/vim-indent-guides'
 
  " Require ``` pip install flake8  ```
  let g:syntastic_python_checkers = ['flake8']
- let g:indent_guides_enable_on_vim_startup = 1
- let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
  call neobundle#end()
 
  " Required:
  filetype plugin indent on
 
+ call s:pypset()
+
 
  " If there are uninstalled bundles found on startup,
  " this will conveniently prompt you to install them.
  NeoBundleCheck
+
+
