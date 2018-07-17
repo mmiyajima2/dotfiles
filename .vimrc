@@ -44,9 +44,11 @@ endfunction
  NeoBundle 'scrooloose/nerdtree'
  NeoBundle 'davidhalter/jedi-vim'
  NeoBundle 'scrooloose/syntastic'
+ NeoBundle 'leafgarland/typescript-vim'
 
  let g:syntastic_python_checkers = ['flake8']
  let NERDTreeShowHidden = 1
+ let g:typescript_indent_disable = 1
 
  call neobundle#end()
 
