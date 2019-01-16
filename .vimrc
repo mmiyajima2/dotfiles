@@ -1,5 +1,3 @@
-" MIYAJIMA add..
-syntax on
 set number
 set expandtab
 set tabstop=4
@@ -16,52 +14,33 @@ augroup fileTypeIndent
   autocmd BufNewFile,BufRead *.css setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
-function! s:setpypath()
-    py3(sys.path.insert(0, '.'))
-endfunction
+if &compatible
+  set nocompatible
+endif
+" Add the dein installation directory into runtimepath
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-" Note: Skip initialization for vim-tiny or vim-small.
- if 0 | endif
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
 
- if has('vim_starting')
-   if &compatible
-     set nocompatible               " Be iMproved
-   endif
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('Shougo/deoplete.nvim')
 
-   " Required:
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
- endif
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('davidhalter/jedi-vim')
+  call dein#add('scrooloose/syntastic')
+  call dein#add('posva/vim-vue')
 
- " Required:
- call neobundle#begin(expand('~/.vim/bundle/'))
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
 
- " Let NeoBundle manage NeoBundle
- " Required:
- NeoBundleFetch 'Shougo/neobundle.vim'
+  call dein#end()
+  call dein#save_state()
+endif
 
- " My Bundles here:
- " Refer to |:NeoBundle-examples|.
- " Note: You don't set neobundle setting in .gvimrc!
- "
- NeoBundle 'scrooloose/nerdtree'
- NeoBundle 'davidhalter/jedi-vim'
- NeoBundle 'scrooloose/syntastic'
- NeoBundle 'posva/vim-vue'
+filetype plugin indent on
 
- let g:syntastic_python_checkers = ['flake8']
- let NERDTreeShowHidden = 1
- let g:typescript_indent_disable = 1
-
- call neobundle#end()
-
- " Required:
- filetype plugin indent on
-
- call s:setpypath()
-
-
- " If there are uninstalled bundles found on startup,
- " this will conveniently prompt you to install them.
- NeoBundleCheck
-
-
+let NERDTreeShowHidden = 1
+syntax enable 
