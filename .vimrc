@@ -43,4 +43,5 @@ endif
 filetype plugin indent on
 
 let NERDTreeShowHidden = 1
+let g:jedi#popup_on_dot = 0
 syntax enable 
