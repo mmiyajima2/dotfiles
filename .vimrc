@@ -1,3 +1,9 @@
+" It's up to you...
+" curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+" sh ./installer.sh ~/.cache/dein
+" ...open vim...
+" :call dein#install()
+
 set number
 set expandtab
 set tabstop=4
