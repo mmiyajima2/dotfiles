@@ -37,6 +37,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('scrooloose/syntastic')
   call dein#add('posva/vim-vue')
 
+  call dein#add('hashivim/vim-terraform')
+
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
     call dein#add('roxma/vim-hug-neovim-rpc')
