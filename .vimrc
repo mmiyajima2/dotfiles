@@ -33,8 +33,8 @@ call dein#begin(s:dein_base)
 call dein#add(s:dein_src)
 
 " Your plugins go here:
-call dein#add('Shougo/neosnippet.vim')
-call dein#add('Shougo/neosnippet-snippets')
+"call dein#add('Shougo/neosnippet.vim')
+"call dein#add('Shougo/neosnippet-snippets')
 call dein#add('preservim/nerdtree')
 call dein#add('davidhalter/jedi-vim')
 call dein#add('scrooloose/syntastic')
@@ -55,6 +55,8 @@ endif
 if has('syntax')
   syntax on
 endif
+
+let NERDTreeShowHidden=1
 
 " Uncomment if you want to install not-installed plugins on startup.
 if dein#check_install()
